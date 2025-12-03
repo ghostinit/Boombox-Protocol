@@ -1,0 +1,10 @@
+{
+  "name": "BoomProtocol",
+  "version": "0.0.1",
+  "description": "Shared protocol structs for master & remotes",
+  "keywords": ["esp32", "protocol"],
+  "authors": [{ "name": "Adam Lyon" }],
+  "license": "MIT",
+  "frameworks": "arduino",
+  "platforms": "*"
+}
