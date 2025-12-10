@@ -19,6 +19,15 @@ enum SendReqType : uint8_t {
     SEND_STATUS = 2
 };
 
+enum MasterSendReqType : uint8_t {
+  SEND_FIRE_CMD = 1,
+  SEND_STATUS_REQ = 2
+};
+
+typedef struct {
+  MasterSendReqType type;
+} MasterSendRequest;
+
 typedef struct {
   SendReqType type;
 } SendRequest;
