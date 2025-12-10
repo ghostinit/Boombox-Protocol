@@ -13,29 +13,28 @@ enum SendReqType : uint8_t {
     SEND_STATUS = 2
 };
 
-// typedef struct __attribute__((packed))
-// {
-//   uint8_t id;
-//   uint8_t command;
-//   uint8_t port;
-// } Message;
 
+// From master to remote
 typedef struct __attribute__((packed)) {
   MsgType type;      // always MSG_FIRE
   uint8_t portId;
   uint16_t holdMs;
 } FireMsg;
 
+// from remote to master
 typedef struct __attribute__((packed)) {
   MsgType type;      // always MSG_STATUS
   uint8_t isArmed;
   uint8_t batteryPercent;
 } StatusMsg;
 
+// from master to remote
 typedef struct __attribute__((packed)) {
   MsgType type;      // always MSG_CONFIG
 } StatusRequest;
 
+
+// from remote to master
 typedef struct __attribute__((packed)) {
   MsgType type;      // always MSG_CONFIG
 } AwkMsg;
