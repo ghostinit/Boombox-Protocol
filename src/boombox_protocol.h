@@ -26,6 +26,7 @@ typedef struct {
 // Generic incoming message struct
 typedef struct {
   uint8_t data[32];
+  uint8_t mac[6];
   int len;
 } IncomingMsg;
 

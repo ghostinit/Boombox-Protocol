@@ -1,6 +1,6 @@
 {
   "name": "BoomProtocol",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Shared protocol structs for master & remotes",
   "keywords": ["esp32", "protocol"],
   "authors": [{ "name": "Adam Lyon" }],
