@@ -19,6 +19,10 @@ enum SendReqType : uint8_t {
     SEND_STATUS = 2
 };
 
+typedef struct {
+  SendReqType type;
+} SendRequest;
+
 // Generic incoming message struct
 typedef struct {
   uint8_t data[32];
