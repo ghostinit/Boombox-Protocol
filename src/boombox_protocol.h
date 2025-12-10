@@ -26,6 +26,9 @@ enum MasterSendReqType : uint8_t {
 
 typedef struct {
   MasterSendReqType type;
+  uint8_t mac[6];
+  uint8_t port;
+  uint16_t holdDuration;
 } MasterSendRequest;
 
 typedef struct {
