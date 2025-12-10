@@ -13,6 +13,11 @@ enum SendReqType : uint8_t {
     SEND_STATUS = 2
 };
 
+// Generic incoming message struct
+typedef struct {
+  uint8_t data[32];
+  int len;
+} IncomingMsg;
 
 // From master to remote
 typedef struct __attribute__((packed)) {
