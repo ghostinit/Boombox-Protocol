@@ -1,6 +1,12 @@
 #pragma once
 #include <Arduino.h>
 
+enum ARM_STATUS
+{
+    NOT_ARMED,
+    ARMED
+};
+
 enum MsgType : uint8_t {
   MSG_FIRE = 1,
   MSG_STATUS = 2,
