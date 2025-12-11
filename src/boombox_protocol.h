@@ -1,6 +1,8 @@
 #pragma once
 #include <Arduino.h>
 
+#define MAX_SYSTEM_NAME_LEN 25
+
 enum ARM_STATUS
 {
     NOT_ARMED,
@@ -52,6 +54,7 @@ typedef struct __attribute__((packed)) {
 // from remote to master
 typedef struct __attribute__((packed)) {
   MsgType type;      // always MSG_STATUS
+  char systemName[MAX_SYSTEM_NAME_LEN];
   uint8_t isArmed;
   uint8_t batteryPercent;
 } StatusMsg;
