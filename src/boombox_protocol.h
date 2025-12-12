@@ -3,6 +3,8 @@
 
 #define MAX_SYSTEM_NAME_LEN 25
 
+// Shared enums
+// enums for StatusMsg, I think?
 enum REMOTE_MODE {
   REMOTE,
   LOCAL
@@ -14,18 +16,12 @@ enum ARM_STATUS
     ARMED
 };
 
-enum MsgType : uint8_t {
-  MSG_FIRE = 1,
-  MSG_STATUS = 2,
-  MSG_STATUS_REQUEST = 3,
-  MSG_AWK = 4
-};
 
-enum SendReqType : uint8_t {
-    SEND_ACK = 1,
-    SEND_STATUS = 2
-};
 
+
+
+
+// Used by the queue on the master side when sending a message
 enum MasterSendReqType : uint8_t {
   SEND_FIRE_CMD = 1,
   SEND_STATUS_REQ = 2
@@ -38,10 +34,19 @@ typedef struct {
   uint16_t holdDuration;
 } MasterSendRequest;
 
+// Used by the remote when sending outgoing message
+enum SendReqType : uint8_t {
+    SEND_ACK = 1,
+    SEND_STATUS = 2
+};
+
 typedef struct {
   SendReqType type;
 } SendRequest;
 
+// THIS IS USED FOR ALL INCOMING MESSAGES
+// BEFORE MsgType IS PARSED AND
+// data[32] GETS CAST TO THE CORRECT MESSAGE TYPE
 // Generic incoming message struct
 typedef struct {
   uint8_t data[32];
@@ -49,12 +54,27 @@ typedef struct {
   int len;
 } IncomingMsg;
 
+
+// THESE ARE THE MESSAGES THAT ACTUALLY GET SENT BACK AND FORTH
+
+// Message type definitions
+// Enum to identify the message type
+enum MsgType : uint8_t {
+  MSG_FIRE = 1,
+  MSG_STATUS = 2,
+  MSG_STATUS_REQUEST = 3,
+  MSG_AWK = 4
+};
+
+
 // From master to remote
 typedef struct __attribute__((packed)) {
   MsgType type;      // always MSG_FIRE
   uint8_t portId;
   uint16_t holdMs;
 } FireMsg;
+
+
 
 // from remote to master
 typedef struct __attribute__((packed)) {
