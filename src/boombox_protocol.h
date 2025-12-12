@@ -3,6 +3,11 @@
 
 #define MAX_SYSTEM_NAME_LEN 25
 
+enum REMOTE_MODE {
+  REMOTE,
+  LOCAL
+};
+
 enum ARM_STATUS
 {
     NOT_ARMED,
