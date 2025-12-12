@@ -59,8 +59,10 @@ typedef struct __attribute__((packed)) {
 // from remote to master
 typedef struct __attribute__((packed)) {
   MsgType type;      // always MSG_STATUS
+  uint8_t mode;
   char systemName[MAX_SYSTEM_NAME_LEN];
   uint8_t isArmed;
+  uint8_t activeBankCount;
   uint8_t batteryPercent;
 } StatusMsg;
 
