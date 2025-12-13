@@ -51,8 +51,7 @@ struct Battery
     bool doBatteryStatusUpdate = false;
     POWER_STATUS powerStatus = BATTERY_OK;
     uint8_t ADC_PIN = 4;
-}
+};
 
-void
-beginBattery(Battery &battery, const uint8_t ADC_PIN);
+void beginBattery(Battery &battery, const uint8_t ADC_PIN);
 void batteryMonitorLoop(bool immediateUpdate, Battery &battery);
