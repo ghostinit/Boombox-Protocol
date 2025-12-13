@@ -1,5 +1,6 @@
 #pragma once
 #include <Arduino.h>
+#include "bbox_common_constants.h"
 
 // Used by the queue on the master side when sending a message
 enum MasterSendReqType : uint8_t
