@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 #define MAX_SYSTEM_NAME_LEN 25
-#define WIFI_CHANNEL 3
+#define BB_WIFI_CHANNEL 3
 
 // Shared enums
 // enums for StatusMsg, I think?
