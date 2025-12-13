@@ -51,3 +51,7 @@ struct Battery
     bool doBatteryStatusUpdate;
     POWER_STATUS powerStatus = BATTERY_OK;
 }
+
+extern Battery battery;
+
+void testFunction();
