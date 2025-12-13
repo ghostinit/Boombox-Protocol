@@ -1,7 +1,7 @@
 {
-  "name": "BoomProtocol",
+  "name": "BoomBoxShared",
   "version": "0.1.3",
-  "description": "Shared protocol structs for master & remotes",
+  "description": "Shared protocols, functions and data",
   "keywords": [
     "esp32",
     "protocol"
