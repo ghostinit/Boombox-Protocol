@@ -46,12 +46,13 @@ struct Battery
         {SLA_MAX_VOLTAGE, SLA_MIN_VOLTAGE}};
     float calibratedVoltage = 13.5;
     uint16_t calibratedADCReading = 4096;
-    uint8_t batteryPercent;
-    float systemVoltage;
-    bool doBatteryStatusUpdate;
+    uint8_t batteryPercent = 100;
+    float systemVoltage = 10.0;
+    bool doBatteryStatusUpdate = false;
     POWER_STATUS powerStatus = BATTERY_OK;
+    uint8_t ADC_PIN = 4;
 }
 
-extern Battery battery;
-
-void testFunction();
+void
+beginBattery(Battery &battery, const uint8_t ADC_PIN);
+void batteryMonitorLoop(bool immediateUpdate, Battery &battery);
