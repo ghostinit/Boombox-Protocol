@@ -1,23 +1,6 @@
 #pragma once
 #include <Arduino.h>
 
-#define MAX_SYSTEM_NAME_LEN 25
-#define BB_WIFI_CHANNEL 3
-
-// Shared enums
-// enums for StatusMsg, I think?
-enum REMOTE_MODE
-{
-  REMOTE,
-  LOCAL
-};
-
-enum ARM_STATUS
-{
-  NOT_ARMED,
-  ARMED
-};
-
 // Used by the queue on the master side when sending a message
 enum MasterSendReqType : uint8_t
 {
@@ -32,18 +15,6 @@ typedef struct
   uint8_t port;
   uint16_t holdDuration;
 } MasterSendRequest;
-
-// Used by the remote when sending outgoing message
-enum SendReqType : uint8_t
-{
-  SEND_ACK = 1,
-  SEND_STATUS = 2
-};
-
-typedef struct
-{
-  SendReqType type;
-} SendRequest;
 
 // THIS IS USED FOR ALL INCOMING MESSAGES
 // BEFORE MsgType IS PARSED AND
