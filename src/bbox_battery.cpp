@@ -35,8 +35,8 @@ void batteryMonitorLoop(bool immediateUpdate, Battery &battery)
         }
 
         // Get max/min voltage values for the current system battery type
-        float _maxVoltage = battery.batteryType[battery.currentBatteryType].maxVoltage;
-        float _minVoltage = battery.batteryType[battery.currentBatteryType].minVoltage;
+        float _maxVoltage = battery.voltageRange[battery.currentBatteryType].maxVoltage;
+        float _minVoltage = battery.voltageRange[battery.currentBatteryType].minVoltage;
 
         if (battery.calibratedADCReading == 0)
         {
