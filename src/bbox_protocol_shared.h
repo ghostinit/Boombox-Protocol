@@ -2,21 +2,6 @@
 #include <Arduino.h>
 #include "bbox_common_constants.h"
 
-// Used by the queue on the master side when sending a message
-enum MasterSendReqType : uint8_t
-{
-  SEND_FIRE_CMD = 1,
-  SEND_STATUS_REQ = 2
-};
-
-typedef struct
-{
-  MasterSendReqType type;
-  uint8_t mac[6];
-  uint8_t port;
-  uint16_t holdDuration;
-} MasterSendRequest;
-
 // THIS IS USED FOR ALL INCOMING MESSAGES
 // BEFORE MsgType IS PARSED AND
 // data[32] GETS CAST TO THE CORRECT MESSAGE TYPE
