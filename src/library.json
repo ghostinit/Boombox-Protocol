@@ -1,11 +1,8 @@
 {
   "name": "BoomBoxShared",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Shared protocols, functions and data",
-  "keywords": [
-    "esp32",
-    "protocol"
-  ],
+  "keywords": ["esp32", "protocol"],
   "authors": [
     {
       "name": "Adam Lyon"

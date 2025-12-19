@@ -77,7 +77,16 @@ void batteryMonitorLoop(bool immediateUpdate, Battery &battery)
             counter = 0;
             percentTotal = 0;
             battery.doBatteryStatusUpdate = true;
-            switch (battery.powerStatus)
+            
+        }
+        else if (immediateUpdate)
+        {
+            battery.batteryPercent = tempPercent;
+            battery.doBatteryStatusUpdate = true;
+        }
+
+        if (battery.doBatteryStatusUpdate) {
+        switch (battery.powerStatus)
             {
             case BATTERY_OK:
                 if (battery.batteryPercent <= 20)
@@ -95,11 +104,6 @@ void batteryMonitorLoop(bool immediateUpdate, Battery &battery)
 
             default:;
             }
-        }
-        else if (immediateUpdate)
-        {
-            battery.batteryPercent = tempPercent;
-            battery.doBatteryStatusUpdate = true;
         }
     }
 }
