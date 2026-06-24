@@ -24,7 +24,8 @@ enum MsgType : uint8_t
   MSG_STATUS_REQUEST = 3,
   MSG_AWK = 4,
   MSG_ALL_OFF = 5,
-  MSG_IDENTIFY = 6
+  MSG_IDENTIFY = 6,
+  MSG_TEST_MODE = 7
 };
 
 // From master to remote
@@ -69,3 +70,10 @@ typedef struct __attribute__((packed))
 {
   MsgType type; // always MSG_IDENTIFY
 } IdentifyMsg;
+
+// from master to remotes — enable or disable test mode
+typedef struct __attribute__((packed))
+{
+  MsgType type;  // always MSG_TEST_MODE
+  uint8_t enable; // 1 = enter test mode, 0 = exit
+} TestModeMsg;
