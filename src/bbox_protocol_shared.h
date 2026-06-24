@@ -22,7 +22,8 @@ enum MsgType : uint8_t
   MSG_FIRE = 1,
   MSG_STATUS = 2,
   MSG_STATUS_REQUEST = 3,
-  MSG_AWK = 4
+  MSG_AWK = 4,
+  MSG_ALL_OFF = 5
 };
 
 // From master to remote
@@ -55,3 +56,9 @@ typedef struct __attribute__((packed))
 {
   MsgType type; // always MSG_CONFIG
 } AwkMsg;
+
+// from master to all remotes — immediate all-ports-off
+typedef struct __attribute__((packed))
+{
+  MsgType type; // always MSG_ALL_OFF
+} AllOffMsg;

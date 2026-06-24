@@ -1,6 +1,6 @@
 {
   "name": "BoomBoxShared",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Shared protocols, functions and data",
   "keywords": ["esp32", "protocol"],
   "authors": [
