@@ -23,7 +23,8 @@ enum MsgType : uint8_t
   MSG_STATUS = 2,
   MSG_STATUS_REQUEST = 3,
   MSG_AWK = 4,
-  MSG_ALL_OFF = 5
+  MSG_ALL_OFF = 5,
+  MSG_IDENTIFY = 6
 };
 
 // From master to remote
@@ -62,3 +63,9 @@ typedef struct __attribute__((packed))
 {
   MsgType type; // always MSG_ALL_OFF
 } AllOffMsg;
+
+// from master to a specific remote — flash LEDs to identify the box
+typedef struct __attribute__((packed))
+{
+  MsgType type; // always MSG_IDENTIFY
+} IdentifyMsg;
